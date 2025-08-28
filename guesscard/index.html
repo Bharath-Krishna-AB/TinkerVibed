@@ -8,12 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Memory Cards</h1>
+        <h1>Guess the flower</h1>
+        <div class="players">
+            <div class="player1">
+                <p>Player1: <span class="score1"></span></p>
+            </div>
+            <div class="player2">
+                <p>Player2: <span class="score2"></span></p>
+            </div>
+        </div>
         <div class="grid-container">
         </div>
+
+        <div class="winner-container">
+            <h1 class="winner"></h1>
+        </div>
         <div class="actions">
-            <button onclick="restart()">Restart</button>
-            <p>Score: <span class="score"></span></p>
+                <button onclick="restart()">Restart</button>
         </div>
     </div>
 <script src="/guesscard/script.js"></script>

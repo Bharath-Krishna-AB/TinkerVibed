@@ -2,9 +2,16 @@ const gridContainer = document.querySelector(".grid-container");
 let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
-let score = 0;
+let score1 = 0;
+let score2 = 0;
+let playercount = 0;
+let playerturn = true;
+let cardsfound = 0
 
-document.querySelector(".score").textContent = score;
+
+document.querySelector(".score1").textContent = score1;
+document.querySelector(".score2").textContent = score2;
+
 
 fetch("./data/cards.json")
   .then((res) => res.json())
@@ -46,6 +53,10 @@ function generateCards() {
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
+  playercount = playercount + 1;
+  if ((playercount % 2) == 0){
+    changePlayer();
+  }
 
   this.classList.add("flipped");
 
@@ -55,8 +66,6 @@ function flipCard() {
   }
 
   secondCard = this;
-  score++;
-  document.querySelector(".score").textContent = score;
   lockBoard = true;
 
   checkForMatch();
@@ -64,6 +73,34 @@ function flipCard() {
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+
+  if (isMatch){
+    cardsfound = cardsfound + 1;
+  }
+  if(isMatch){
+    if (playerturn){
+        score1++;
+        document.querySelector(".score1").textContent = score1;
+    }else{
+        score2++;
+        document.querySelector(".score2").textContent = score2;
+    }
+
+    if (cardsfound == 6){
+        console.log("game over");
+        const winnerContainer = document.querySelector(".winner-container");
+        const winnerText = document.querySelector(".winner");
+        const gridContainer = document.querySelector(".grid-container");
+        gridContainer.style.display = "none";
+        winnerContainer.style.display = "flex";
+        if (score1 > score2){
+            winnerText.textContent = "Player 1 Wins!";
+        
+        }else{
+            winnerText.textContent = "Player 2 Wins!";
+        }
+    }
+  }
 
   isMatch ? disableCards() : unflipCards();
 }
@@ -92,8 +129,21 @@ function resetBoard() {
 function restart() {
   resetBoard();
   shuffleCards();
-  score = 0;
-  document.querySelector(".score").textContent = score;
+  score1 = 0;
+  score2 = 0;
+  cardsfound = 0;
+  playercount = 0;
+  playerturn = true;
+  document.querySelector(".score1").textContent = score1;
+  document.querySelector(".score2").textContent = score2;
   gridContainer.innerHTML = "";
   generateCards();
+}
+
+function changePlayer() {
+  if (playerturn === true) {
+    playerturn = false;
+  }else {
+    playerturn = true;
+  }
 }
