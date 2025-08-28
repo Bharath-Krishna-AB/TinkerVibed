@@ -1,0 +1,26 @@
+[
+    {
+        "image": "/Assets/guesscard_img/hibiscus.png",
+        "name": "hibiscus"
+    },
+    {
+        "image": "/Assets/guesscard_img/jasmine.png",
+        "name": "jasmine"
+    },
+    {
+        "image": "/Assets/guesscard_img/lotus.png",
+        "name": "lotus"
+    },
+    {
+        "image": "/Assets/guesscard_img/marigold.png",
+        "name": "marigold"
+    },
+    {
+        "image": "/Assets/guesscard_img/rose.png",
+        "name": "rose"
+    },
+    {
+        "image": "/Assets/guesscard_img/whiterose.png",
+        "name": "white rose"
+    }
+]
