@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Margarine&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffd300;
+}
+/* 
+nav {
+    padding: 1rem;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+} */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100vh;
+}
+
+.hero-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #020202;
+    margin-bottom: 1rem;
+    font-family: "Margarine", sans-serif;
+}
+
+.hero-content p {
+    font-family: "Archivo", sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    text-align: center;
+}
+
+.hero-btn {
+    background: #ffcc66;
+    color: #333;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
