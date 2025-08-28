@@ -40,10 +40,10 @@ function generateCards() {
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
     cardElement.innerHTML = `
-      <div class="front"   onClick="playMyAudio()">
+      <div class="front">
         <img class="front-image" src=${card.image} />
       </div>
-      <div class="back"></div>
+      <div class="back" onClick="playMyAudio()"></div>
     `;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
