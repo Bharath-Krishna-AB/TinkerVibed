@@ -27,6 +27,10 @@ nav a {
     justify-content: center;
     width: auto;
     height: 100vh;
+    background-image: url(Assets/Background.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hero-content{
@@ -37,7 +41,7 @@ nav a {
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 5.5rem;
     font-weight: bold;
     color: #020202;
     margin-bottom: 1rem;
@@ -46,7 +50,7 @@ nav a {
 
 .hero-content p {
     font-family: "Archivo", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
     margin-bottom: 2rem;
     max-width: 500px;
@@ -54,14 +58,22 @@ nav a {
 }
 
 .hero-btn {
-    background: #ffcc66;
-    color: #333;
-    padding: 0.75rem 2rem;
+    background: #000;
+    color: #fff;
+    font-family: "Archivo", sans-serif;
+    padding: 1rem 2.5rem;
     border: none;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: all ease-in-out 0.7s;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    background: #fff;
+    color: #000;
+
 }
 
