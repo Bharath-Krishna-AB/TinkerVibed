@@ -40,7 +40,7 @@ function generateCards() {
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
     cardElement.innerHTML = `
-      <div class="front">
+      <div class="front"   onClick="playMyAudio()">
         <img class="front-image" src=${card.image} />
       </div>
       <div class="back"></div>
@@ -134,6 +134,11 @@ function restart() {
   cardsfound = 0;
   playercount = 0;
   playerturn = true;
+  const winnerContainer = document.querySelector(".winner-container");
+  const winnerText = document.querySelector(".winner");
+  const gridContainer = document.querySelector(".grid-container");
+  gridContainer.style.display = "grid";
+  winnerContainer.style.display = "none";
   document.querySelector(".score1").textContent = score1;
   document.querySelector(".score2").textContent = score2;
   gridContainer.innerHTML = "";
@@ -146,4 +151,9 @@ function changePlayer() {
   }else {
     playerturn = true;
   }
+}
+
+
+function playMyAudio(){
+       document.getElementById("myAudio").play();
 }

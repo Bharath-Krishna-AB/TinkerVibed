@@ -44,8 +44,14 @@ p {
     background-color: #000;
     color: white;
     border: none;
+    transition: all ease-in-out 0.7s;
+    cursor: pointer;
 }
 
+.actions button:hover {
+    background-color: #fff;
+    color: #000;
+}
 .grid-container {
   display: grid;
   justify-content: center;
@@ -129,3 +135,11 @@ p {
     margin-bottom: 1rem;
     font-family: "Margarine", sans-serif !important;
 }
+
+
+.winner:hover {
+    color: #fff;
+
+}
+
+
